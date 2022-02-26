@@ -150,6 +150,8 @@ class TitleState extends MusicBeatState
 	}
 
 	var logoBl:FlxSprite;
+	var logoBl2:FlxSprite;
+	var logoBl3:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
@@ -196,7 +198,7 @@ class TitleState extends MusicBeatState
 		// bg.updateHitbox();
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
+		logoBl = new FlxSprite(-150, 0);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -204,6 +206,24 @@ class TitleState extends MusicBeatState
 		logoBl.updateHitbox();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
+
+		logoBl2 = new FlxSprite(150, 0);
+		logoBl2.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl2.antialiasing = ClientPrefs.globalAntialiasing;
+		logoBl2.animation.addByPrefix('bump', 'logo bumpin', 24);
+		logoBl2.animation.play('bump');
+		logoBl2.updateHitbox();
+		// logoBl2.screenCenter();
+		// logoBl2.color = FlxColor.BLACK;
+
+		logoBl3 = new FlxSprite(0, 0);
+		logoBl3.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl3.antialiasing = ClientPrefs.globalAntialiasing;
+		logoBl3.animation.addByPrefix('bump', 'logo bumpin', 24);
+		logoBl3.animation.play('bump');
+		logoBl3.updateHitbox();
+		// logoBl3.screenCenter();
+		// logoBl3.color = FlxColor.BLACK;
 
 		swagShader = new ColorSwap();
 		if(!FlxG.save.data.psykaEasterEgg || !easterEggEnabled) {
@@ -224,7 +244,10 @@ class TitleState extends MusicBeatState
 		gfDance.shader = swagShader.shader;
 		add(logoBl);
 		//logoBl.shader = swagShader.shader;
-
+		add(logoBl2);
+		//logoBl2.shader = swagShader.shader;
+		add(logoBl3);
+		//logoBl3.shader = swagShader.shader;
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
 		titleText.animation.addByPrefix('idle', "Press Enter to Begin", 24);
@@ -243,6 +266,11 @@ class TitleState extends MusicBeatState
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
 		// FlxTween.tween(logo, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
 
+		// FlxTween.tween(logoBl2, {y: logoBl2.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
+		// FlxTween.tween(logo, {y: logoBl2.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
+		
+		// FlxTween.tween(logoBl3, {y: logoBl3.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
+		// FlxTween.tween(logo, {y: logoBl3.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
 		credGroup = new FlxGroup();
 		add(credGroup);
 		textGroup = new FlxGroup();
@@ -452,6 +480,12 @@ class TitleState extends MusicBeatState
 
 		if(logoBl != null) 
 			logoBl.animation.play('bump');
+		
+		if(logoBl2 != null) 
+			logoBl2.animation.play('bump');
+		
+		if(logoBl3 != null) 
+			logoBl3.animation.play('bump');
 
 		if(gfDance != null) {
 			danceLeft = !danceLeft;
