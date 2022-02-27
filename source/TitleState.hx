@@ -215,7 +215,7 @@ class TitleState extends MusicBeatState
 		// logoBl2.screenCenter();
 		// logoBl2.color = FlxColor.BLACK;
 
-		logoBl3 = new FlxSprite(140, 150);
+		logoBl3 = new FlxSprite(140, 170);
 		logoBl3.frames = Paths.getSparrowAtlas('logoBumpin3');
 		logoBl3.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl3.animation.addByPrefix('bump', 'logo bumpin', 24);
