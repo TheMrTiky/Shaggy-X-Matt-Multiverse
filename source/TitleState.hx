@@ -207,7 +207,7 @@ class TitleState extends MusicBeatState
 		// logoBl.color = FlxColor.BLACK;
 
 		logoBl2 = new FlxSprite(450, 0);
-		logoBl2.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl2.frames = Paths.getSparrowAtlas('logoBumpin2');
 		logoBl2.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl2.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logoBl2.animation.play('bump');
@@ -216,7 +216,7 @@ class TitleState extends MusicBeatState
 		// logoBl2.color = FlxColor.BLACK;
 
 		logoBl3 = new FlxSprite(150, 0);
-		logoBl3.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl3.frames = Paths.getSparrowAtlas('logoBumpin3');
 		logoBl3.antialiasing = ClientPrefs.globalAntialiasing;
 		logoBl3.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logoBl3.animation.play('bump');
